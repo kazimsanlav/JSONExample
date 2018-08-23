@@ -4,5 +4,7 @@
     "height":100,
     "weight":71,
     "arm_angle":30,
-    "leg_angle":10
+    "leg_angle":10,
+    "x":100,
+    "y":500
 }

@@ -22,8 +22,8 @@ function drawPerson(person){
 	noStroke();
 
 	// information about person
-	var x = 100;
-	var y = windowHeight/2;
+	var x = person.x;
+	var y = person.y;
 	var head_len = person.height*(1/5);
 	var body_len = person.height*(2/5);
 	var leg_len = person.height*(2/5);
@@ -97,12 +97,18 @@ function drawPerson(person){
 
 }
 function mouseDragged(){
+	movePerson();
 	moveArms();
+}
+
+function movePerson(){
+	person.x = mouseX;
+	person.y = mouseY;
 }
 
 function moveArms(){
 
-	var offset_angle = map(mouseX, 0, windowWidth, 0, 360);
+	var offset_angle = map(mouseY, 0, windowHeight, 180, 0);
 	
 	person.arm_angle = offset_angle;
 	person.leg_angle = offset_angle;
